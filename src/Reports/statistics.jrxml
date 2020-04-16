@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="java" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="905c6e07-a198-4394-a8df-bc1748d76a97">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT `id` AS "ID", `player_name` "Name", `dob` AS "Date of Birth", `position` AS "Position", `height` AS "Height", `weight` AS "Weight", `matches` "Matches", `goals` AS "Goals", `assists` AS "Assists", `red_cards` AS "Red Cards", `yellow_cards` AS "Yellow Cards" FROM `statistics`WHERE `status`='1']]>
+	</queryString>
+	<field name="ID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Name" class="java.lang.String"/>
+	<field name="Date of Birth" class="java.lang.String"/>
+	<field name="Position" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Height" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Weight" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Matches" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Goals" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Assists" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Red Cards" class="java.lang.Integer"/>
+	<field name="Yellow Cards" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="100" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="110" height="100" uuid="2435729a-b899-4986-bb3b-f40f46aee0a2"/>
+				<imageExpression><![CDATA["E:\\Viranga\\Victory FC\\System\\VictoryFC_ManagementSystem\\src\\Images\\logo2.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" mode="Opaque" x="113" y="0" width="440" height="46" forecolor="#000000" uuid="cbb82389-ede5-4d93-b0e9-8335b2c8e65e"/>
+				<textElement>
+					<font size="34" isBold="false"/>
+				</textElement>
+				<text><![CDATA[VICTORY FOOTBALL CLUB]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="461" y="71" width="89" height="29" forecolor="#000000" uuid="66a1941c-9e4e-4faa-8afa-35a6f649f948"/>
+				<textElement>
+					<font size="22" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Statistics]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="122" y="46" width="77" height="20" forecolor="#000000" uuid="9168f640-d58f-49b4-adec-a61432ad54f4"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[SINCE 1942]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="0" y="7" width="29" height="18" forecolor="#000000" uuid="bd14a43b-19fb-4fb8-acb2-a7aca630bc2a"/>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="29" y="7" width="121" height="18" forecolor="#000000" uuid="327b4ed2-30bd-4fd1-958b-b00968d214c3"/>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="150" y="7" width="70" height="18" forecolor="#000000" uuid="fb27aa20-9315-47f0-9837-27c4c4e17949"/>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Date of Birth]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="220" y="7" width="57" height="18" forecolor="#000000" uuid="7879b694-db49-4908-af98-013b1f615644"/>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Position]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="277" y="7" width="41" height="18" forecolor="#000000" uuid="564a2122-d1e5-4a2d-bead-2adf050cd7e3"/>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Height]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="318" y="7" width="40" height="18" forecolor="#000000" uuid="d4f47aa4-6d35-486b-91eb-dd9dd480935d"/>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Weight]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="358" y="7" width="50" height="18" forecolor="#000000" uuid="8973ec33-f387-4e6c-850f-f998a9397737"/>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Matches]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="408" y="7" width="37" height="18" forecolor="#000000" uuid="d936d8c4-d7f9-4966-99cc-2db179a8d3bb"/>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Goals]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="445" y="7" width="41" height="18" forecolor="#000000" uuid="9f4ae882-54b0-4e95-9d97-9ab26bb0e6d8"/>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Assists]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="486" y="7" width="27" height="18" forecolor="#000000" uuid="50067ee8-2ff4-46ae-b287-2c251460467c"/>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Red Cards]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="513" y="7" width="37" height="18" forecolor="#000000" uuid="a3f94ebc-7cad-4e96-b7d3-a74fdc07b8bd"/>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Yellow Cards]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="18" uuid="58309f8a-9585-487d-9ab1-99d1de8e93cb"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="0" y="0" width="29" height="18" uuid="00aaf578-c8c5-487b-8ec0-58d3e23b07e3"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ID}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="29" y="0" width="120" height="18" uuid="26e7effa-acd0-4276-8a6c-1898ef5b86fa"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="149" y="0" width="71" height="18" uuid="1158a0f2-814c-4f19-b7d7-c4a34120e4f9"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Date of Birth}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="220" y="0" width="57" height="18" uuid="e5e75b11-0773-4a79-94a9-e5a1d8a0257f"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Position}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="277" y="0" width="41" height="18" uuid="1d730b1f-4b37-47f9-a4b1-9f1259a42a1b"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Height}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="318" y="0" width="40" height="18" uuid="690ad6fd-c959-4f1f-bc87-4b83926f5c6e"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Weight}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="358" y="0" width="50" height="18" uuid="f1e85f42-d803-44b7-ad28-13a1516a2596"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Matches}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="408" y="0" width="37" height="18" uuid="3894a31f-bee7-4849-9e85-c7d7baa983ff"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Goals}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="445" y="0" width="38" height="18" uuid="b97985a8-fb29-4fea-bf33-6e2886c12c21"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Assists}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="486" y="0" width="25" height="18" uuid="441be12d-aeee-48cb-b4d5-b70166f01d0c"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Red Cards}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="513" y="0" width="37" height="18" uuid="2d44539d-d39a-4418-89a5-9109e1898c2d"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Yellow Cards}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="3eb84ddc-2866-43a1-8898-0d19a97db1fe"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="1" width="555" height="24" forecolor="#D0B48E" backcolor="#000000" uuid="af28c1c0-fc3c-438e-ae00-c963e409b85e"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="513" y="0" width="40" height="20" forecolor="#FFFFFF" uuid="202f1dfe-66c0-4213-b160-3eeeeae4f9ab"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="433" y="0" width="80" height="20" forecolor="#FFFFFF" uuid="aa5a8106-8ee7-459a-825e-cd15ce0995d4"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="2" y="1" width="197" height="20" forecolor="#FFFFFF" uuid="87100aa2-eaad-423c-ab66-f845e88ea5bc"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
